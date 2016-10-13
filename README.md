@@ -54,11 +54,11 @@ ruby-sinatra-mysql-template/
     lib/
     public/
         css/
-            style.css
+            style.css       # css style
     views/
         main.erb            # html template
     database_backup.sql     # MySQL database dump
-    main.rb                 # main Go code
+    main.rb                 # main Ruby code
     README.md
     LICENSE
 
