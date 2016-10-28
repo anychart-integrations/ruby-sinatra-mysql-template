@@ -8,13 +8,7 @@ Mysqlclient = Mysql2::Client.new(:host => "localhost",
 	:database => "anychart_db")
 
 def get_top_fruits
-	res = []
-	data = Mysqlclient.query("SELECT * FROM fruits ORDER BY value DESC LIMIT 5", :as => :hash)
-	data.each do |row|
-		row.delete "id"
-		res.push row
-	end 
-	return res
+	Mysqlclient.query("SELECT name, value FROM fruits ORDER BY value DESC LIMIT 5", :as => :hash).to_a
 end
 
 get "/" do 
